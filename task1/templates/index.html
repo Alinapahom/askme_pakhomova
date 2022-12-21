@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>AskTheatre</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/base.css">
+    <link rel="stylesheet" href="../static/css/index.css">
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-dark bg-dark">
+        <a id="main_label" class="navbar-brand" href="#">
+            <div>
+<!--                <h1 id="site-title">AskTheatre</h1>-->
+                <img id="user-pic" src="../static/img/logo_golos_white.png" alt="Логотип" class="rounded"/>
+            </div>
+        </a>
+
+        <div class="input-group" id="search-box">
+            <input class="form-control form-control-lg" type="search" placeholder="Введите запрос"
+                   aria-label="Введите запрос">
+            <span class="input-group-append">
+                <button class="btn btn-lg btn-outline-secondary" type="button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </span>
+        </div>
+
+        <div id="user-tools">
+            <a href="ask.html" id="ask-question" class="btn btn-secondary">Задать вопрос</a>
+
+            <div id="user-dropdown" class="dropdown">
+                <a class="dropdown-toggle" href="#" id="user-menu" role="button"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Данил Завьялов
+                </a>
+                <div class="dropdown-menu" aria-labelledby="user-menu">
+                    <a class="dropdown-item" href="index.html">Профиль</a>
+                    <a class="dropdown-item" href="settings.html">Настройки</a>
+                    <a class="dropdown-item" href="login.html">Выйти</a>
+                </div>
+            </div>
+
+            <img id="user-pic" src="../static/img/profile_pic.jpg" alt="Аватар" class="rounded"/>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col-9 pr-5 mt-2">
+                <div class="headings">
+                    <h2>Новые вопросы</h2>
+                    <a href="#" style="accent-color: #adb5bd" >Рейтинговые вопросы</a>
+                </div>
+                <div class="question-card container bg-light shadow-sm">
+                    <div class="row">
+                        <div class="col-2 left-side">
+                            <img src="../static/img/pic1.jpg" alt="Аватар" class="rounded">
+                            <button class="like__btn">
+                                <span id="icon"><i class="far fa-thumbs-up"></i></span>
+                                <span id="count">0</span> Like
+                            </button>
+                        </div>
+                        <div class="col-10 right-side">
+                            <h3 class="question-title"><a href="question.html">Скоро начало?</a></h3>
+                            <p class="question-description">Когда будет открытие сезона?</p>
+                            <div class="answers-and-tags">
+                                <a href="question.html" class="link-to-answers">Ответы(3)</a>
+                                <p class="question-tags">Теги: <a href="index_for_tag.html">спектакль</a> <a href="index_for_tag.html">помещение</a></p>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question-card container bg-light shadow-sm">
+                    <div class="row">
+                        <div class="col-2 left-side">
+                            <img src="../static/img/pic2.jpg" alt="Аватар" class="rounded">
+                            <button class="like__btn">
+                                <span id="icon"><i class="far fa-thumbs-up"></i></span>
+                                <span id="count">0</span> Like
+                            </button>
+                        </div>
+                        <div class="col-10 right-side">
+                            <h3 class="question-title"><a href="question.html">Какие планируются новые спектакли?</a></h3>
+                            <p class="question-description">Скоро премьера! "Гамлет" Шекспир</p>
+                            <div class="answers-and-tags">
+                                <a href="question.html" class="link-to-answers">Ответы(3)</a>
+                                <p class="question-tags">Теги: <a href="index_for_tag.html">Гамлет</a> <a href="index_for_tag.html">премьра</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question-card container bg-light shadow-sm">
+                    <div class="row">
+                        <div class="col-2 left-side">
+                            <img src="../static/img/pic3.jpg" alt="Аватар" class="rounded">
+                            <button class="like__btn">
+                                <span id="icon"><i class="far fa-thumbs-up"></i></span>
+                                <span id="count">0</span> Like
+                            </button>
+                        </div>
+                        <div class="col-10 right-side">
+                            <h3 class="question-title"><a href="question.html">Объновление состава?</a></h3>
+                            <p class="question-description">Какие у кого роли?</p>
+                            <div class="answers-and-tags">
+                                <a href="question.html" class="link-to-answers">Ответы(3)</a>
+                                <p class="question-tags">Теги: <a href="index_for_tag.html">спектакль</a> <a href="index_for_tag.html">Волки и овцы</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <aside id="aside-info" class="col-3">
+                <h2>Популярные теги</h2>
+                <div class="bg-light shadow-sm" id="tags-container">
+                    <ul class="tags-list">
+                        <li><a href="index_for_tag.html">Расположение</a></li>
+                        <li><a href="index_for_tag.html">Место</a></li>
+                        <li><a href="index_for_tag.html">Бронь</a></li>
+                        <li><a href="index_for_tag.html">Гамлет</a></li>
+                        <li><a href="index_for_tag.html">Руководитель</a></li>
+                        <li><a href="index_for_tag.html">Режиссер</a></li>
+                        <li><a href="index_for_tag.html">Ура</a></li>
+                        <li><a href="index_for_tag.html">Мяу</a></li>
+                        <li><a href="index_for_tag.html">Премьера</a></li>
+                    </ul>
+                </div>
+
+                <h2>Лучшие пользователи</h2>
+                <div class="bg-light shadow-sm" id="best-users-container">
+                    <ul>
+                        <li><a href="#">Пахомова Алина</a></li>
+                        <li><a href="#">Данил Завьялов</a></li>
+                        <li><a href="#">Мирра Левашова</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+        </div>
+
+        <nav>
+            <ul class="pagination pagination-lg">
+                <li class="page-item">
+                    <a class="page-link" href="#">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</main>
+
+<footer class="page-footer bg-light footer">
+    <div class="footer-copyright text-center">
+        <span class="text-muted">Автор: Пахомова Алина, IOS-11</span>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/d8773369b4.js" crossorigin="anonymous"></script>
+<script src="../static/js/index.js"></script>
+
+</body>
+</html>

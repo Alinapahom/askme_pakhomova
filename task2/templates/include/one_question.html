@@ -1,0 +1,24 @@
+{% load static %}
+
+<div class="question-card container bg-light shadow-sm">
+    <div class="row">
+        <div class="col-2 left-side">
+            <img src="{% static 'img/pic1.jpg' %}" alt="Аватар" class="rounded">
+            <button class="like__btn">
+                <span id="icon"><i class="far fa-thumbs-up"></i></span>
+                <span id="count">{{ question.num_of_likes }}</span> Like
+            </button>
+        </div>
+        <div class="col-10 right-side">
+            <h3 class="question-title"><a href="{% url 'question_page' pk=question.id %}">{{ question.title }}</a></h3>
+            <p class="question-description">{{ question.description }}</p>
+            <div class="answers-and-tags">
+                <a href="{% url 'question_page' pk=question.id %}" class="link-to-answers">Ответы({{ question.num_of_answers }})</a>
+                <p class="question-tags">Теги:
+                    {% for t in question.tags %}
+                    <a href="{% url 'tag_questions' tag=t %}">{{ t }}</a>
+                    {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

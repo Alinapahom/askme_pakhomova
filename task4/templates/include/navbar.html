@@ -1,0 +1,43 @@
+{% load static %}
+
+<header>
+    <nav class="navbar navbar-dark bg-dark">
+        <a id="main_label" class="navbar-brand" href="{% url 'root' %}">
+            <div>
+                <img id="user-pic" src="{% static 'img/logo_golos_white.png' %}" alt="Логотип" class="rounded"/>
+            </div>
+        </a>
+
+        <div class="input-group" id="search-box">
+            <input class="form-control form-control-lg" type="search" placeholder="Введите запрос"
+                   aria-label="Введите запрос">
+            <span class="input-group-append">
+                <button class="btn btn-lg btn-outline-secondary" type="button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </span>
+        </div>
+        <a href="{% url 'ask_question' %}" id="ask-question" class="btn btn-secondary">Задать вопрос</a>
+
+    {% if user.is_authenticated %}
+        <div id="user-tools">
+            <div id="user-dropdown" class="dropdown">
+                <a class="dropdown-toggle" href="#" id="user-menu" role="button"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {{ user.profile.nickname }}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="user-menu">
+                    <a class="dropdown-item" href="#">Профиль</a>
+                    <a class="dropdown-item" href="{% url 'settings' %}">Настройки</a>
+                    <a class="dropdown-item" href="{% url 'logout' %}">Выйти</a>
+                </div>
+                <img id="user-pic" src="{{ user.profile.profile_pic.url }}" alt="Аватар" class="rounded"/>
+            </div>
+    {% else %}
+        <a class="btn btn-close-white" href="{% url 'login' %}">Войти</a>
+        <a class="btn btn-close-white" href="{% url 'signup' %}">Зарегистрироваться</a>
+    {% endif %}
+        </div>
+    </nav>
+
+</header>

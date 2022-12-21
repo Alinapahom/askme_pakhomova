@@ -1,0 +1,22 @@
+{% load static %}
+
+<div class="answer-card container bg-light shadow-sm">
+    <div class="row">
+        <div class="col-2 left-side">
+            <img src="{% static 'img/pic2.jpg' %}" alt="Аватар" class="rounded">
+            <button class="like__btn">
+                <span id="icon"><i class="far fa-thumbs-up"></i></span>
+                <span id="count">0</span> Like
+            </button>
+        </div>
+        <div class="col-10 right-side">
+            <p class="question-description">{{ answer.text|linebreaks }}</p>
+            <div class="form-check mark-correct">
+                <input class="form-check-input" type="checkbox" id="correct-checkbox-2">
+                <label class="form-check-label" for="correct-checkbox-2">
+                    Отметить как решение
+                </label>
+            </div>
+        </div>
+    </div>
+</div>

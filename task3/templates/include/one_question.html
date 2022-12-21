@@ -1,0 +1,28 @@
+{% load static %}
+
+<div class="question-card container bg-light shadow-sm">
+    <div class="row">
+        <div class="col-2 left-side">
+            <img src="{{ question.author.profile_pic.url }}" alt="Аватар" class="rounded">
+            <p class="user-nickname">{{ question.author.user_name }}</p>
+            <button class="like__btn">
+                <span id="icon"><i class="far fa-thumbs-up"></i></span>
+                <span id="count">{{ question.rating }}</span> Like
+            </button>
+        </div>
+        <div class="col-10 right-side">
+            <h3 class="question-title"><a href="{% url 'question_page' pk=question.id %}">{{ question.title }}</a></h3>
+            <p class="question-description">{{ question.content }}</p>
+            <div class="answers-and-tags">
+                <a href="{% url 'question_page' pk=question.id %}" class="link-to-answers">Ответы({{ question.get_answers_count }})</a>
+                <p class="question-tags mt-5">Теги:
+                    {% for t in question.tags.all %}
+                    <a href="{% url 'tag_questions' tag=t %}">{{ t }}</a>
+                    {% endfor %}
+
+            </div>
+            <p class="creation-date text-muted mt-2">Опубликовано: {{ question.creation_date }}</p>
+        </div>
+
+    </div>
+</div>

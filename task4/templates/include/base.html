@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>AskTheatre</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    {% block link-css %}
+    {% endblock link-css %}
+</head>
+
+{% include 'include/navbar.html' %}
+
+<main>
+    <div class="container">
+        <div class="row">
+            {% block left-side %}
+                <div class="col-9 pr-5 mt-2">
+                    {% block main-headings %}
+                    {% endblock main-headings %}
+
+                    {% block main-content %}
+                    {% endblock main-content %}
+                </div>
+            {% endblock left-side %}
+
+            <aside id="aside-info" class="col-3">
+                {% block aside-right %}
+                    <h2>Популярные теги</h2>
+                    <div class="bg-light shadow-sm" id="tags-container">
+                        <ul class="tags-list">
+                            <li><a href="{% url 'tag_questions' tag='Расположение' %}">Расположение</a></li>
+                            <li><a href="{% url 'tag_questions' tag='Место' %}">Место</a></li>
+                            <li><a href="{% url 'tag_questions' tag='Бронь' %}">Бронь</a></li>
+                            <li><a href="{% url 'tag_questions' tag='Гамлет' %}">Гамлет</a></li>
+                            <li><a href="{% url 'tag_questions' tag='Руководитель' %}">Руководитель</a></li>
+                            <li><a href="{% url 'tag_questions' tag='Режиссер' %}">Режиссер</a></li>
+                            <li><a href="{% url 'tag_questions' tag='Ура' %}">Ура</a></li>
+                            <li><a href="{% url 'tag_questions' tag='Мяу' %}">Мяу</a></li>
+                            <li><a href="{% url 'tag_questions' tag='Премьера' %}">Премьера</a></li>
+                        </ul>
+                    </div>
+
+                     <h2>Лучшие пользователи</h2>
+                     <div class="bg-light shadow-sm" id="best-users-container">
+                         <ul>
+                             <li><a href="#">Пахомова Алина</a></li>
+                             <li><a href="#">Данил Завьялов</a></li>
+                             <li><a href="#">Мирра Левашова</a></li>
+                         </ul>
+                     </div>
+                {% endblock aside-right %}
+            </aside>
+
+        </div>
+
+        {% block pagination %}
+        {% endblock pagination %}
+    </div>
+</main>
+
+{% include 'include/footer.html' %}
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/d8773369b4.js" crossorigin="anonymous"></script>
+
+{% block link-js %}
+{% endblock link-js %}
+
+
+</body>
+</html>
